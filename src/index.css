@@ -1,0 +1,177 @@
+body {
+  background-color: #341852;
+  margin-top: 4rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 400px;
+  min-width: 320px;
+  margin: 0 auto;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#794cc3, #5c3c92);
+  border-radius: 7px;
+}
+
+.container {
+  margin: 3rem 2rem 2rem;
+}
+
+header {
+  display: flex;
+  align-content: center;
+}
+
+header div {
+  flex: 1;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+.subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  margin: 2px 0;
+}
+
+.main {
+  width: 65%;
+  min-width: 200px;
+  margin: 2rem auto 3rem;
+  color: #2a1e49;
+  background-color: white;
+  border-radius: 5px;
+  transform: rotate(-3deg);
+}
+
+.rulesList {
+  padding: 15px 0 10px 0;
+}
+
+.rule {
+  position: relative;
+  list-style-type: none;
+  width: auto;
+  margin-bottom: 5px;
+  border-bottom: solid blue 1px;
+}
+
+.rule .label {
+  margin-left: 25px;
+  animation-duration: .5s;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: .5px;
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+.leftLine {
+  position: absolute;
+  border-left: solid #f84194 2px;
+  height: 100%;
+  left: 18px;
+}
+
+.fa-arrow-left {
+  font-size: 1.3rem;
+}
+
+.strikeLine {
+  background-color: #09cec7;
+  position: absolute;
+  height: 3px;
+  top: 8px;
+  left: 22px;
+  width: 0;
+  transition: all 0.5s ease;
+}
+
+@keyframes slideValid {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes slideFalse {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+.fa-check-circle {
+  font-size: 1.5rem;
+  color: #09cec7;
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  background-color: white;
+  height: auto;
+  transition: transform 0.5s ease;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.valid .fa-check-circle {
+  transform: scale(1)
+}
+
+.rule.valid .label {
+  animation-name: slideValid;
+  opacity: 0.5;
+}
+
+.rule.false .label {
+  animation-name: slideFalse;
+}
+
+.password {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 8px 10px;
+  line-height: 1.4;
+  border-radius: 2px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 17px;
+  background-color: #ededed;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  line-height: 1.9;
+}
+
+.saveBtn.valid {
+  background-color: #ffde3c;
+  cursor: pointer;
+}
